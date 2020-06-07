@@ -1,0 +1,106 @@
+aws_access_key = "YOUR KEY GOES HERE"
+aws_secret_key = "YOUR SECRET KEY GOES HERE"
+cluster_instance_type = "Cluster instance type"
+dns_zone_id = "Route53 Zone ID"
+
+eureka = {
+  "service_name": "eureka",
+  "log_group": "/ecs/fincn/eureka",
+  "image": "Image url for container repo.",
+  "cpu": 1024,
+  "memory": 2048
+  "port": 8761
+  "health_check_path": "/",
+  "desired_count": 1,
+  "service_url": "eureka.yourdomain.com",
+  "hostname": "http://eureka.yourdomain.com"
+  "default_zone": "http://eureka.yourdomain.com/eureka"
+}
+
+provisioner = {
+  "service_name": "provisioner",
+  "log_group": "/ecs/fincn/provisioner",
+  "image": "Image url for container repo.",
+  "cpu": 1024,
+  "memory": 2048
+  "port": 2020
+  "health_check_path": "/provisioner/v1/permittables",
+  "desired_count": 1,
+  "service_url": "provisioner.yourdomain.com"
+}
+
+identity = {
+  "service_name": "identity",
+  "log_group": "/ecs/fincn/identity",
+  "image": "Image url for container repo.",
+  "cpu": 1024,
+  "memory": 2048
+  "port": 2021
+  "health_check_path": "/identity/v1/info",
+  "desired_count": 1,
+  "service_url": "identity.yourdomain.com"
+}
+
+customer = {
+  "service_name": "customer",
+  "log_group": "/ecs/fincn/customer",
+  "image": "Image url for container repo.",
+  "cpu": 1024,
+  "memory": 2048
+  "port": 2024
+  "health_check_path": "/customer",
+  "desired_count": 1,
+  "service_url": "customer.yourdomain.com"
+}
+
+accounting = {
+  "service_name": "accounting",
+  "log_group": "/ecs/fincn/accounting",
+  "image": "Image url for container repo.",
+  "cpu": 1024,
+  "memory": 2048
+  "port": 2025
+  "health_check_path": "/accounting",
+  "desired_count": 1,
+  "service_url": "accounting.yourdomain.com"
+}
+
+deposit = {
+  "service_name": "deposit",
+  "log_group": "/ecs/fincn/deposit",
+  "image": "Image url for container repo.",
+  "cpu": 1024,
+  "memory": 2048
+  "port": 2027
+  "health_check_path": "/deposit",
+  "desired_count": 1,
+  "service_url": "deposit.yourdomain.com"
+}
+
+service_key_details = {
+    public_key_timestamp: "public key timestamp",
+    public_key_modulus: "public key modulus"
+    public_key_exponent: 65537, #Replace with your Public key exponent
+    private_key_modulus: "private key modulus"
+    private_key_exponent: "private key exponent"
+}
+
+postgres_details = {
+    host: "Your DB host",
+    username: "postgres username",
+    password: "postgres password"
+}
+
+activemq_details = {
+  broker_url: "activemq broker url",
+  username: "activemq username",
+  password: "activemq password"
+}
+
+cassandra_details = {
+  cluster_name: "cluster name",
+  username: "cassandra username",
+  password: "cassandra password",
+  contact_points: "cassandra contact points",
+  keyspace: "seshat"
+}
